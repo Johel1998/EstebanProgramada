@@ -19,7 +19,7 @@ public class Menu {
      boolean continueGame = true;
              
       JOptionPane.showMessageDialog(null,"B I E N V E N I D O","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
-     JOptionPane.showMessageDialog(null,"Introduce tu Nombre"); 
+     JOptionPane.showInputDialog(null,"Introduce tu Nombre"); 
       
       do {          
           
