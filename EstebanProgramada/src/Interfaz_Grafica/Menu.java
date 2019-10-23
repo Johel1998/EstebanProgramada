@@ -9,22 +9,26 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Adrian Regidor
+ * @author Esteban M. Peralta
  */
 
 
 public class Menu {
-     public static void main(String[] args)
-  {
-   String jugador;
-   String inicio;
-   
-     JOptionPane.showMessageDialog(null,"B I E N V E N I D O","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
+     public void menuTab(){
+     int option;
+     boolean continueGame = true;
+             
+      JOptionPane.showMessageDialog(null,"B I E N V E N I D O","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
      JOptionPane.showMessageDialog(null,"Introduce tu Nombre"); 
       
       do {          
           
       } while (true);
+      
   }
+
+    public void menu1() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
      
 }
