@@ -7,7 +7,7 @@ package Interfaz_Grafica;
 
 import javax.swing.JOptionPane;
 
-/**
+/** 
  *
  * @author Esteban M. Peralta
  */
@@ -20,15 +20,17 @@ public class Menu {
              
       JOptionPane.showMessageDialog(null,"B I E N V E N I D O","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
      JOptionPane.showInputDialog(null,"Introduce tu Nombre"); 
-      
-      do {          
-          
-      } while (true);
-      
-  }
-
-    public void menu1() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     option = Integer.parseInt(JOptionPane.showInputDialog(""));
+  
+         switch (option) {
+             case 1:
+                 
+                 
+         }
      
+     
+
+    
+     
+}
 }
