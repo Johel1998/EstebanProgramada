@@ -7,8 +7,20 @@ package Tablero_Juego;
 
 /**
  *
- * @author Adrian Regidor
+ * @author Esteban M. Peralta
  */
 public class Tablero {
+    private Celda [][] matrix1;
+    private Celda [][] matrix2;
+    final static private int SIZE = 8;
     
+    public Tablero(Celda[][] matrix){
+        this.matrix1 = matrix;
+        this.matrix2 = matrix;
+    }
+    public Tablero(){
+        if(matrix1 == null){
+           matrix1 = new Celda[SIZE][SIZE];
+        }
+    }
 }
