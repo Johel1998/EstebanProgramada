@@ -19,9 +19,9 @@ public class Menu {
      boolean continueGame = true;
              
      
-        label = new JLabel("MESSAGE");
-       label.setFont(new Font("Arial", Font.BOLD, 18));
-       JOptionPane.showMessageDialog(null,label,"ERROR",JOptionPane.WARNING_MESSAGE);
+      //label = new JLabel("MESSAGE");
+      // label.setFont(new Font("Arial", Font.BOLD, 18));
+      //JOptionPane.showMessageDialog(null,label,"ERROR",JOptionPane.WARNING_MESSAGE);
        
      JOptionPane.showMessageDialog(null,"1..\n.1.\n..1\n","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
      

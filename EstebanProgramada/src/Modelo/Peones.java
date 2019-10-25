@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 /**
@@ -10,5 +5,20 @@ package Modelo;
  * @author Adrian Regidor
  */
 public class Peones {
-    private String color;
+    private char color;
+
+    public char getColor() {
+        return color;
+    }
+
+    public void setColor(char color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Peones{" + "color=" + color + '}';
+    }
+    
+    
 }
