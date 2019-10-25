@@ -10,5 +10,5 @@ package Modelo;
  * @author Adrian Regidor
  */
 public class Peones {
-    private blanca blanca;
+    private String color;
 }
