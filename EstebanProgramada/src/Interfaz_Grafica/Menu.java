@@ -1,4 +1,4 @@
-/*
+  /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -18,15 +18,14 @@ public class Menu {
      int option;
      boolean continueGame = true;
              
-      JOptionPane.showMessageDialog(null,"B I E N V E N I D O","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
-     JOptionPane.showInputDialog(null,"Introduce tu Nombre"); 
-     option = Integer.parseInt(JOptionPane.showInputDialog(""));
-  
-         switch (option) {
-             case 1:
-                 
-                 
-         }
+     
+        label = new JLabel("MESSAGE");
+       label.setFont(new Font("Arial", Font.BOLD, 18));
+       JOptionPane.showMessageDialog(null,label,"ERROR",JOptionPane.WARNING_MESSAGE);
+       
+     JOptionPane.showMessageDialog(null,"1..\n.1.\n..1\n","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
+     
+     
      
      
 
