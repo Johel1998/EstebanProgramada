@@ -5,13 +5,20 @@ package Modelo;
  * @author Adrian Regidor
  */
 public class Peones {
-    private char color;
+    private int color;
 
-    public char getColor() {
+    public Peones(int color) {
+        this.color = color;
+    }
+    
+    public Peones() {
+    }
+
+    public int getColor() {
         return color;
     }
 
-    public void setColor(char color) {
+    public void setColor(int color) {
         this.color = color;
     }
 
@@ -19,6 +26,12 @@ public class Peones {
     public String toString() {
         return "Peones{" + "color=" + color + '}';
     }
+
+   
+
+    
+
+      
     
     
 }
