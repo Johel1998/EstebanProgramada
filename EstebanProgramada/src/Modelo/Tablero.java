@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 /**
@@ -14,7 +9,7 @@ public class Tablero {
     private Peones [][] matrix2;
     final static private int SIZE = 8;
     
-    public Tablero(Peones[][] matrix){
+    public Tablero(Peones[][] matrix){//ESTO NO ES NECESARIO X Q UD NO VA RECIBIR UNA MATRIX POR EL USER
         this.matrix1 = matrix;
         this.matrix2 = matrix;
     }
