@@ -19,13 +19,23 @@ public class Menu {
      int option;
      boolean continueGame = true;
              
-     String info = "";
+     String casillas = "";
       //label = new JLabel("MESSAGE");
       // label.setFont(new Font("Arial", Font.BOLD, 18));
       //JOptionPane.showMessageDialog(null,label,"ERROR",JOptionPane.WARNING_MESSAGE);
        
      //JOptionPane.showMessageDialog(null,"1..\n.1.\n..1\n","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
          String [][] matriz1 = {
+         {"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}
+        +{"{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}"}        
+        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}        
+        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}          
+        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}       
+        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}
+        +{"{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}"} 
+        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}};
+     
+      String [][] matriz2 = {
          {"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}
         +{"{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}"}        
         +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}        
