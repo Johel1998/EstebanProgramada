@@ -12,17 +12,13 @@ public class Menu {
     private int opcion;
     
     public void iniciarMenu(){
-    
+    JOptionPane.showInputDialog("Bienvenidos al juego de los peones");
         while (continuar) {   
-            JOptionPane.showInputDialog("Bienvenidos\n1-Jugar"
-                    + "\n2-Salir");
+            opcion = Integer.parseInt(JOptionPane.showInputDialog("1 mover pieza"));
             switch(opcion){
                 case 1:
-                    
                     String namePlayer1= JOptionPane.showInputDialog("Digite el nombre del jugador 1");
-                    String namePlayer2= JOptionPane.showInputDialog("Digite el nombre del jugador 2");
-                    
-                    
+                    String namePlayer2= JOptionPane.showInputDialog("Digite el nombre del jugador 2");                    
                     int coordenadaFila1 = Integer.parseInt(JOptionPane.showInputDialog("Digite la fila en la que "
                             + "desea hacer realizar su primer movimiento"));
                     
