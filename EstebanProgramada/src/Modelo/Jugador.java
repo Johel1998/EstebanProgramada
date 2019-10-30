@@ -2,7 +2,7 @@ package Modelo;
 
 /**
  *
- * @author Adrian Regidor
+ * @author Esteban M. Peralta
  */
 public class Jugador {
     private String nombreJugador;

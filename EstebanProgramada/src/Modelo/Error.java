@@ -2,7 +2,7 @@ package Modelo;
 
 /**
  *
- * @author Esteban
+ * @author Esteban M. Peralta
  */
 public class Error extends Exception{
 
