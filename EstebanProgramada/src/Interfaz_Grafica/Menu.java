@@ -18,8 +18,9 @@ public class Menu {
             switch (opcion) {
                 case 1:
                     int fila = Integer.parseInt(JOptionPane.showInputDialog("Digite la fila del peon a seleccionar"));
-                    int column = Integer.parseInt(JOptionPane.showInputDialog("Digite la columna del peon a seleccionar"));
-                    
+                    int columna = Integer.parseInt(JOptionPane.showInputDialog("Digite la columna del peon a seleccionar"));
+                    int filaMover = Integer.parseInt(JOptionPane.showInputDialog("Digite la fila a la que quiere mover el peon"));
+                    int columnaMover = Integer.parseInt(JOptionPane.showInputDialog("Digite la columna a la que quiere mover el peon"));
                     break;
                 case 2:
                     continuar = false;
