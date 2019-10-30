@@ -1,57 +1,50 @@
-  /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz_Grafica;
 
 import javax.swing.JOptionPane;
-
-/** 
+import Logica_Juego.Juego;
+/**
  *
- * @author Esteban M. Peralta
+ * @author JOHEL
  */
-
-
 public class Menu {
-     public String [][] tablero_impreso (String tablero [][]){
-    //public void menuTab(){
-     int option;
-     boolean continueGame = true;
-             
-     String casillas = "";
-      //label = new JLabel("MESSAGE");
-      // label.setFont(new Font("Arial", Font.BOLD, 18));
-      //JOptionPane.showMessageDialog(null,label,"ERROR",JOptionPane.WARNING_MESSAGE);
-       
-     //JOptionPane.showMessageDialog(null,"1..\n.1.\n..1\n","\n Tablero de Ajedrez",JOptionPane.INFORMATION_MESSAGE); 
-         String [][] matriz1 = {
-         {"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}
-        +{"{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}"}        
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}        
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}          
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}       
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}
-        +{"{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}"} 
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}};
-     
-      String [][] matriz2 = {
-         {"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}
-        +{"{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}","{peonN}"}        
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}        
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}          
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}       
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}
-        +{"{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}","{peonB}"} 
-        +{"{     }","{     }","{     }","{     }","{     }","{     }","{     }","{     }"}};
-     
-     
-     
-     
+    Juego j = new Juego();
+    private boolean continuar = true;
+    private int opcion;
     
-       
-     
-     
-     
-}
+    public void iniciarMenu(){
+    
+        while (continuar) {   
+            JOptionPane.showInputDialog("Bienvenidos\n1-Jugar"
+                    + "\n2-Salir");
+            switch(opcion){
+                case 1:
+                    
+                    String namePlayer1= JOptionPane.showInputDialog("Digite el nombre del jugador 1");
+                    String namePlayer2= JOptionPane.showInputDialog("Digite el nombre del jugador 2");
+                    
+                    
+                    int coordenadaFila1 = Integer.parseInt(JOptionPane.showInputDialog("Digite la fila en la que "
+                            + "desea hacer realizar su primer movimiento"));
+                    
+                    int coordenadaColumn1 = Integer.parseInt(JOptionPane.showInputDialog("Digite la columna en la que "
+                            + "desea hacer realizar su primer movimiento"));
+                    
+                    
+                    j.escogerPiezaInicial(coordenadaFila1, coordenadaColumn1);
+                    
+                    break;
+                    
+                case 2:
+                    continuar = false;
+                    break;
+                
+            }
+            
+        }
+        
+        
+    
+    }
+
+    
 }

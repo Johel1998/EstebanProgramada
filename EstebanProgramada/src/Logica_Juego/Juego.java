@@ -9,11 +9,11 @@ import Modelo.Tablero;
  */
 
 public class Juego {
-  
+    //BLANCAS == 2 && NEGRAS == 1
     private Peones[][] matrix1;
     private Peones[][] matrix2;
     final static private int SIZE = 8;
-    
+    private boolean turnoBlancas = true;
     
     //Constructor
     public Juego() {
@@ -36,14 +36,42 @@ public class Juego {
         }
     }
     
+    public void cambiarTurno(){
+        if (turnoBlancas == true) {
+            turnoBlancas = false;
+        }else{
+            turnoBlancas = true;
+        }
+    }
+    
+    
     /**
      * Metodo que contiene toda la logica del jogo
      */
-    public void logicaJuego(){
+    public void escogerPiezaInicial(int fila, int columna){
         //Contador para blancas
         int contBlancas = 0;
         //Contador para negras
         int contNegras = 0;
+        
+      
+        boolean mover2espacios = false;
+        
+       
+        
+        if ((fila == 6 && matrix1[fila][columna].getColor() == 1 && turnoBlancas == false) 
+                || fila == 1 && matrix1[fila][columna].getColor() == 2 && turnoBlancas == true) {
+            mover2espacios = true;//ESCOGENCIA PRIMEROS 2 ESPACIAS
+            cambiarTurno();
+            
+            
+            if (mover2espacios) {
+                
+            }
+  
+            
+            
+        }
         
         
       //Setear fila 2 como blancas, es decir, q sean un 2
@@ -52,7 +80,7 @@ public class Juego {
 //        }
         //for (int i = 0; i < matrix1.length; i++) {
           //  for (int j = 0; j < matrix1.length; j++) {
-                if (matrix1[1][0].getColor() == 0) {
+                if (matrix1[fila][columna].getColor() == 0) {
                   contBlancas++;
                 }
             //}
@@ -95,12 +123,12 @@ public class Juego {
     }
     
     
-    public static void main(String[] args) {
-//        Tablero t = new Tablero();
-        Juego j = new Juego();
-        j.logicaJuego();
-        System.out.println(j.imprimir());
-    }
+//    public static void main(String[] args) {
+////        Tablero t = new Tablero();
+//        Juego j = new Juego();
+//        j.logicaJuego();
+//        System.out.println(j.imprimir());
+//    }
     
     
 }
