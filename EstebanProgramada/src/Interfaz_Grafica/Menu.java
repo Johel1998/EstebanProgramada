@@ -11,36 +11,23 @@ public class Menu {
     private boolean continuar = true;
     private int opcion;
     
-    public void iniciarMenu(){
-    JOptionPane.showInputDialog("Bienvenidos al juego de los peones");
-        while (continuar) {   
-            opcion = Integer.parseInt(JOptionPane.showInputDialog("1 mover pieza"));
-            switch(opcion){
+    public void iniciarMenu() {
+        JOptionPane.showMessageDialog(null, "Bienvenidos al juego de los peones");
+        while (continuar) {
+            opcion = Integer.parseInt(JOptionPane.showInputDialog("1 mover pieza y 2 para salir"));
+            switch (opcion) {
                 case 1:
-                    String namePlayer1= JOptionPane.showInputDialog("Digite el nombre del jugador 1");
-                    String namePlayer2= JOptionPane.showInputDialog("Digite el nombre del jugador 2");                    
-                    int coordenadaFila1 = Integer.parseInt(JOptionPane.showInputDialog("Digite la fila en la que "
-                            + "desea hacer realizar su primer movimiento"));
-                    
-                    int coordenadaColumn1 = Integer.parseInt(JOptionPane.showInputDialog("Digite la columna en la que "
-                            + "desea hacer realizar su primer movimiento"));
-                    
-                    
-                    j.escogerPiezaInicial(coordenadaFila1, coordenadaColumn1);
+                    int fila = Integer.parseInt(JOptionPane.showInputDialog("Digite la fila del peon a seleccionar"));
+                    int column = Integer.parseInt(JOptionPane.showInputDialog("Digite la columna del peon a seleccionar"));
                     
                     break;
-                    
                 case 2:
                     continuar = false;
                     break;
-                
-            }
-            
+                default:
+                    JOptionPane.showMessageDialog(null, "djhfj", "ERROR", JOptionPane.ERROR_MESSAGE);
+                break;
+            }   
         }
-        
-        
-    
     }
-
-    
 }

@@ -5,12 +5,15 @@
  */
 package Prueba;
 
+import Interfaz_Grafica.Menu;
+
 /**
  *
  * @author JOHEL
  */
 public class Main {
     public static void main(String[] args) {
-        
+        Menu menu = new Menu();
+        menu.iniciarMenu();
     }
 }

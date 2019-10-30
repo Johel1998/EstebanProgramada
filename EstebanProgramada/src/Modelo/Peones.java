@@ -34,12 +34,5 @@ public class Peones {
     -si un peon obstaculiza su avance lo bloquea, detiene su avance
     debe cambiar de peon
     -primer movimiento: puede avanzar 1 o 2 casillas de una en una
-    */
-   
-
-    
-
-      
-    
-    
+    */   
 }

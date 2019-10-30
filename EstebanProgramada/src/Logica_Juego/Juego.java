@@ -1,20 +1,23 @@
 package Logica_Juego;
 
+import Modelo.Error;
 import Modelo.Peones;
-import Modelo.Tablero;
 
 /**
  *
  * @author Esteban M. Peralta
  */
-
 public class Juego {
+
     //BLANCAS == 2 && NEGRAS == 1
     private Peones[][] matrix1;
     private Peones[][] matrix2;
     final static private int SIZE = 8;
     private boolean turnoBlancas = true;
-    
+    private int contadorB = 0;
+    private int contadorN = 0;
+    boolean mover2espacios = true;
+
     //Constructor
     public Juego() {
         if (matrix1 == null) {
@@ -22,8 +25,12 @@ public class Juego {
             matrix2 = new Peones[SIZE][SIZE];
             for (int i = 0; i < matrix1.length; i++) {
                 for (int j = 0; j < matrix1.length; j++) {
-                    matrix1[i][j] = new Peones(0);
+                    matrix1[i][j] = new Peones(0);//Vacio
                 }
+            }
+            for (int i = 0; i < matrix1[1].length; i++) {
+                matrix1[1][i] = new Peones(1);//Blancas
+                matrix1[6][i] = new Peones(2);//Negras
             }
         }
         if (matrix2 == null) {
@@ -35,70 +42,83 @@ public class Juego {
             }
         }
     }
-    
-    public void cambiarTurno(){
+
+    /**
+     *
+     */
+    public void cambiarTurno() {
         if (turnoBlancas == true) {
             turnoBlancas = false;
-        }else{
+        } else {
             turnoBlancas = true;
         }
     }
-    
-    
+
     /**
-     * Metodo que contiene toda la logica del jogo
+     * dshbfsdkjcfsnjfcshf
+     *
+     * @param fila dhfshduifhsuf
+     * @param columna sjfhshfs
+     * @return ehsfcseuihfcuisehfus
      */
-    public void escogerPiezaInicial(int fila, int columna){
-        //Contador para blancas
-        int contBlancas = 0;
-        //Contador para negras
-        int contNegras = 0;
-        
-      
-        boolean mover2espacios = false;
-        
-       
-        
-        if ((fila == 6 && matrix1[fila][columna].getColor() == 1 && turnoBlancas == false) 
+    public boolean esPiezaInicial(int fila, int columna) {
+        if ((fila == 6 && matrix1[fila][columna].getColor() == 1 && turnoBlancas == false)
                 || fila == 1 && matrix1[fila][columna].getColor() == 2 && turnoBlancas == true) {
-            mover2espacios = true;//ESCOGENCIA PRIMEROS 2 ESPACIAS
-            cambiarTurno();
-            
-            
-            if (mover2espacios) {
-                
-            }
-  
-            
-            
+            mover2espacios = true;
+            return true;
         }
-        
-        
-      //Setear fila 2 como blancas, es decir, q sean un 2
-//        if (matrix1[2][0] == 0) {
-//            
-//        }
-        //for (int i = 0; i < matrix1.length; i++) {
-          //  for (int j = 0; j < matrix1.length; j++) {
-                if (matrix1[fila][columna].getColor() == 0) {
-                  contBlancas++;
-                }
-            //}
-        //}
-        
-      //Setear fila 7 como negra, es decir, q sea 1
-        
-      
-      //Mover una pieza, y q esa pieza sea una blanca inicalmente  
-      
-      
-        
+        mover2espacios = false;
+        return false;
     }
-    
-//    public void asignacionInicial(){
-//  
-//    }
-    
+
+    public boolean sePuedeComer(int fila, int columna, int filaMover, int columnaMover) {
+        if (turnoBlancas) {
+            if ((matrix1[filaMover][columnaMover].getColor() == 2 && filaMover == fila++) && (columnaMover == columna++ || columnaMover == columna--)) {
+                return true;
+            }
+        } else if ((matrix1[filaMover][columnaMover].getColor() == 1 && filaMover == fila++) && (columnaMover == columna++ || columnaMover == columna--)) {
+            return true;
+        }
+        return false;
+    }
+
+    public void movimiento(int fila, int columna, int filaMover, int columnaMover) throws Error {
+        if (sePuedeComer(fila, columna, filaMover, columnaMover) == true) {
+            if (turnoBlancas) {
+                matrix1[fila][columna] = new Peones(0);
+                matrix1[filaMover][columnaMover] = new Peones(1);
+            } else {
+                matrix1[fila][columna] = new Peones(0);
+                matrix1[filaMover][columnaMover] = new Peones(2);
+            }
+            cambiarTurno();
+            return;
+        }
+        if (esPiezaInicial(fila, columna)) { //verifica si puede mover 2 espacios adelante
+            if (filaMover == fila + 2 || filaMover == fila++) {//verifica que donde se quiera mover sea valido
+                if (turnoBlancas) {
+                    matrix1[fila][columna] = new Peones(0);
+                    matrix1[filaMover][columnaMover] = new Peones(1);
+                } else {
+                    matrix1[fila][columna] = new Peones(0);
+                    matrix1[filaMover][columnaMover] = new Peones(2);
+                }
+            }
+            cambiarTurno();
+        } else {
+            if (filaMover == fila++) { //verifica que donde se quiera mover sea valido
+                if (turnoBlancas) {
+                    matrix1[fila][columna] = new Peones(0);
+                    matrix1[filaMover][columnaMover] = new Peones(1);
+                } else {
+                    matrix1[fila][columna] = new Peones(0);
+                    matrix1[filaMover][columnaMover] = new Peones(2);
+                }
+            }
+            cambiarTurno();
+        }
+        throw new Error("Su movimiento no es valido");
+    }
     
     public String imprimir() {
         String txt = "";
@@ -107,13 +127,12 @@ public class Juego {
             for (int j = 0; j < matrix1.length; j++) {
                 if (matrix1[i][j].getColor() == 0) {
                     matrixAux[i][j] = " 0 ";
-                  
                 }
                 if (matrix1[i][j].getColor() == 1) {
-                    matrixAux[i][j] = "  N  ";
+                    matrixAux[i][j] = " N ";
                 }
                 if (matrix1[i][j].getColor() == 2) {
-                    matrixAux[i][j] = "  B  ";
+                    matrixAux[i][j] = " B ";
                 }
                 txt = txt + "" + matrixAux[i][j] + "";
             }
@@ -121,14 +140,9 @@ public class Juego {
         }
         return txt;
     }
-    
-    
-//    public static void main(String[] args) {
-////        Tablero t = new Tablero();
-//        Juego j = new Juego();
-//        j.logicaJuego();
-//        System.out.println(j.imprimir());
-//    }
-    
-    
+
+    public static void main(String[] args) {
+        Juego j = new Juego();
+        System.out.println(j.imprimir());
+    }
 }
