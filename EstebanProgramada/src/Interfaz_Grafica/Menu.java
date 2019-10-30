@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 import Logica_Juego.Juego;
 /**
  *
- * @author JOHEL
+ * @author Esteban M. Peralta
  */
 public class Menu {
     Juego j = new Juego();
