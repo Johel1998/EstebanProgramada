@@ -12,9 +12,9 @@ public class Menu {
     private int opcion;
     
     public void iniciarMenu() {
-        JOptionPane.showMessageDialog(null, "Bienvenidos al juego de los peones");
+        JOptionPane.showMessageDialog(null, "Bienvenidos al Guerra de Peones");
         while (continuar) {
-            opcion = Integer.parseInt(JOptionPane.showInputDialog("1 mover pieza y 2 para salir"));
+            opcion = Integer.parseInt(JOptionPane.showInputDialog("1 mover pieza \n 2 para salir"));
             switch (opcion) {
                 case 1:
                     int fila = Integer.parseInt(JOptionPane.showInputDialog("Digite la fila del peon a seleccionar"));
