@@ -9,7 +9,7 @@ import Interfaz_Grafica.Menu;
 
 /**
  *
- * @author JOHEL
+ * @author Esteban M. Peralta
  */
 public class Main {
     public static void main(String[] args) {
