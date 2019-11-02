@@ -8,15 +8,16 @@ import Modelo.Error;
  * @author Esteban M. Peralta
  */
 public class Menu {
-    
+      
+    Juego j = new Juego();
     private boolean continuar = true;
     private int opcion;
     
     public void iniciarMenu() throws Error {
-        Juego j = new Juego();
+     
         JOptionPane.showMessageDialog(null, "Bienvenidos al Guerra de Peones");
         JOptionPane.showMessageDialog(null, "Este es su tablero");
-        System.out.println(j.imprimir());
+        //System.out.println(j.imprimir());
         while (continuar) {
             opcion = Integer.parseInt(JOptionPane.showInputDialog("1 para mover pieza\n2 para salir"));
             switch (opcion) {
