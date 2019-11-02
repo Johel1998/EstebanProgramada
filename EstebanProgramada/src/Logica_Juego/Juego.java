@@ -3,9 +3,9 @@ package Logica_Juego;
 import Modelo.Error;
 import Modelo.Peones;
 
-/**
- *
+/**Declaracion de la clase Juego
  * @author Esteban M. Peralta
+ * @version 03/11/
  */
 public class Juego {
 
@@ -19,6 +19,10 @@ public class Juego {
     boolean mover2espacios = true;
 
     //Constructor
+    /*Creacion de constructor Juego
+    @param 
+    
+    */
     public Juego() {
         if (matrix1 == null) {
             matrix1 = new Peones[SIZE][SIZE];
@@ -31,6 +35,8 @@ public class Juego {
             for (int i = 0; i < matrix1[1].length; i++) {
                 matrix1[1][i] = new Peones(1);//Negras
                 matrix1[6][i] = new Peones(2);//Blancas
+//                  matrix1[1][i].setColor(1);
+//                  matrix2[6][i].setColor(2);
             }
         }
 //        if (matrix2 == null) {
@@ -59,9 +65,9 @@ public class Juego {
     }
 
     /**
-     * dshbfsdkjcfsnjfcshf
+     * Valida
      *
-     * @param fila dhfshduifhsuf
+     * @param fila llama el 
      * @param columna sjfhshfs
      * @return ehsfcseuihfcuisehfus
      */
@@ -74,19 +80,28 @@ public class Juego {
         mover2espacios = false;
         return false;
     }
-
-    public boolean sePuedeComer(int fila, int columna, int filaMover, int columnaMover) {
+    
+    /**
+     * Metodo que valida que mueva 1 o 2 espacios en blancas o negras
+     * @param fila
+     * @param columna
+     * @param filaMover
+     * @param columnaMover
+     * @return booleano true o false segun movimiento
+     */
+        public boolean sePuedeComer(int fila, int columna, int filaMover, int columnaMover) {
         if (turnoBlancas) {
-            if ((matrix1[filaMover][columnaMover].getColor() == 2 && filaMover == fila++) && (columnaMover == columna++ || columnaMover == columna--)) {
+            if ((matrix1[filaMover][columnaMover].getColor() == 2 && filaMover == 2) && 
+                    (columnaMover == columna++ || columnaMover == columna--)) {
                 return true;
             }
-        } else if ((matrix1[filaMover][columnaMover].getColor() == 1 && filaMover == fila++) && (columnaMover == columna++ || columnaMover == columna--)) {
+        } else if ((matrix1[filaMover][columnaMover].getColor() == 1 && filaMover == 2) && (columnaMover == columna++ || columnaMover == columna--)) {
             return true;
         }
         return false;
     }
 
-    public void movimiento(int fila, int columna, int filaMover, int columnaMover) throws Error {
+    public void movimiento(int fila, int columna, int filaMover, int columnaMover){
         if (sePuedeComer(fila, columna, filaMover, columnaMover) == true) {
             if (turnoBlancas) {
                 matrix1[fila][columna].setColor(0);
@@ -113,16 +128,20 @@ public class Juego {
         }
         if (filaMover == fila++) { //verifica que donde se quiera mover sea valido
             if (turnoBlancas) {
-                matrix1[fila][columna] = new Peones(0);
-                matrix1[filaMover][columnaMover] = new Peones(2);
+//                matrix1[fila][columna] = new Peones(0);
+//                matrix1[filaMover][columnaMover] = new Peones(2);
+                 matrix1[fila][columna].setColor(0);
+                 matrix1[filaMover][columnaMover].setColor(2);
             } else {
-                matrix1[fila][columna] = new Peones(0);
-                matrix1[filaMover][columnaMover] = new Peones(1);
+//                matrix1[fila][columna] = new Peones(0);
+//                matrix1[filaMover][columnaMover] = new Peones(1);
+                 matrix1[fila][columna].setColor(0);
+                 matrix1[filaMover][columnaMover].setColor(1);
             }
             cambiarTurno();
             return;
         }
-        System.out.println("nel");
+       // System.out.println("nel");
     }
     
     public String imprimir() {
@@ -147,7 +166,7 @@ public class Juego {
     }
     
     public String imprimir2(){
-         String txt = "";
+        String txt = "";
         String[][] matrixAux;
         for (int i = 0; i < matrix1.length; i++) {
             for (int j = 0; j < matrix1.length; j++) {
@@ -168,12 +187,18 @@ public class Juego {
 
     public static void main(String[] args) throws Error {
         Juego j = new Juego();
-        System.out.println(j.imprimir2());
-        j.movimiento(6, 0, 4, 0);
-        System.out.println(j.imprimir2());
-        j.movimiento(4, 0, 6, 0);
-        System.out.println(j.imprimir2());
-        j.setPosicion(4, 0);
-        System.out.println(j.imprimir2());
+        //System.out.println(j.imprimir2());
+       // j.movimiento(6, 0, 4, 0);
+//        System.out.println(j.imprimir2());
+//        j.movimiento(4, 0, 6, 0);
+//        System.out.println(j.imprimir2());
+//        j.setPosicion(4, 0);
+    
+        //j.cambiarTurno();
+         
+        
+        
+       
+        System.out.println(j.sePuedeComer(1, 0, 2, 0));
     }
 }
