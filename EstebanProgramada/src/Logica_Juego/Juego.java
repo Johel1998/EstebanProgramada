@@ -102,7 +102,14 @@ public class Juego {
         }
         return false;
     }
-
+    /**
+     * Metodo que valida que se mueva por espacios las fichas blancas o negras
+     * @param fila define las filas de la matriz, o en este caso el tablero
+     * @param columna define las columnas de la matriz, o en este caso el tablero
+     * @param filaMover define la variable para mobilizarse a la siguiente fila
+     * @param columnaMover define la variable para avanzar por la columna
+     * @return booleano true o false segun movimiento
+     */
     public void movimiento(int fila, int columna, int filaMover, int columnaMover){
         if (sePuedeComer(fila, columna, filaMover, columnaMover) == true) {
             if (turnoBlancas) {
@@ -145,7 +152,11 @@ public class Juego {
         }
        // System.out.println("nel");
     }
-    
+     /**
+     * Metodo Imprimir
+     * mediante boolean hace las validaciones necesarias para imprimir el tablero
+   
+     */
     public String imprimir() {
         String txt = "";
         String[][] matrixAux = new String[matrix1.length][matrix1.length];
@@ -166,6 +177,7 @@ public class Juego {
         }
         return txt;
     }
+    
     
     public String imprimir2(){
         String txt = "";

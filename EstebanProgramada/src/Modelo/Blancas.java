@@ -12,7 +12,10 @@ package Modelo;
 public class Blancas {
     private int blancas;
     
-    
+  /*Medodo que declara a los peones blancos
+    @set
+    @get
+    */  
     public Blancas() {
         this.blancas = 2;
     }

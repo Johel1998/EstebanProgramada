@@ -6,6 +6,8 @@ package Modelo;
  */
 public class Error extends Exception{
 
+    /*Metodo que delara un error
+    */
     public Error(String message) {
         super(message);
     }
