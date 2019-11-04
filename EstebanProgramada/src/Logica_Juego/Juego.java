@@ -85,10 +85,10 @@ public class Juego {
     
     /**
      * Metodo que valida que mueva 1 o 2 espacios en blancas o negras
-     * @param fila
-     * @param columna
-     * @param filaMover
-     * @param columnaMover
+     * @param fila define las filas de la matriz, o en este caso el tablero
+     * @param columna define las columnas de la matriz, o en este caso el tablero
+     * @param filaMover define la variable para mobilizarse a la siguiente fila
+     * @param columnaMover define la variable para avanzar por la columna
      * @return booleano true o false segun movimiento
      */
         public boolean sePuedeComer(int fila, int columna, int filaMover, int columnaMover) {
