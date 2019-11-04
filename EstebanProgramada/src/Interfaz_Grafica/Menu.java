@@ -3,9 +3,9 @@ package Interfaz_Grafica;
 import javax.swing.JOptionPane;
 import Logica_Juego.Juego;
 import Modelo.Error;
-/**
- *
+/**Declaracion de la clase Menu
  * @author Esteban M. Peralta
+ * @version 03/11/2019
  */
 public class Menu {
       

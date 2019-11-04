@@ -5,9 +5,9 @@
  */
 package Modelo;
 
-/**
- *
- * @author Estudiante
+/**Declaracion de la clase Blancas
+ * @author Esteban M. Peralta
+ * @version 03/11/2019
  */
 public class Blancas {
     private int blancas;

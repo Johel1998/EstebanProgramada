@@ -1,9 +1,10 @@
 package Modelo;
 
-/**
- *
+/**Declaracion de la clase Tablero
  * @author Esteban M. Peralta
+ * @version 03/11/2019
  */
+
 public class Tablero{
 //    
 //    private Peones[][] matrix1;

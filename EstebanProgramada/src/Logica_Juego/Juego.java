@@ -5,7 +5,7 @@ import Modelo.Peones;
 
 /**Declaracion de la clase Juego
  * @author Esteban M. Peralta
- * @version 03/11/
+ * @version 03/11/2019
  */
 public class Juego {
 
@@ -21,6 +21,8 @@ public class Juego {
     //Constructor
     /*Creacion de constructor Juego
     @param 
+    
+    /** Creacion del constructor juego
     
     */
     public Juego() {
@@ -67,9 +69,9 @@ public class Juego {
     /**
      * Valida
      *
-     * @param fila llama el 
-     * @param columna sjfhshfs
-     * @return ehsfcseuihfcuisehfus
+     * @param fila define las filas de la matriz, o en este caso el tablero
+     * @param columna define las columnas de la matriz, o en este caso el tablero
+     * @return booleano true o false segun movimiento
      */
     public boolean esPiezaInicial(int fila, int columna) {
         if ((fila == 6 && matrix1[fila][columna].getColor() == 2 && turnoBlancas == true)

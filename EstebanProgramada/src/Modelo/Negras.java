@@ -5,10 +5,11 @@
  */
 package Modelo;
 
-/**
- *
- * @author Estudiante
- */
+/**Declaracion de la clase Negras
+ * @author Esteban M. Peralta
+ * @version 03/11/2019
+ */ 
+
 public class Negras {
     private int negra;
 
